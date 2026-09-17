@@ -1,0 +1,447 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevOps & Cloud Engineer Resume</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: #eef1f5;
+      color: #20252b;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10.5px;
+      line-height: 1.38;
+    }
+
+    .resume {
+      width: 8.5in;
+      min-height: 11in;
+      margin: 20px auto;
+      padding: 0.42in 0.5in;
+      background: #fff;
+      box-shadow: 0 2px 15px rgba(0,0,0,.12);
+    }
+
+    header {
+      border-bottom: 2px solid #222;
+      padding-bottom: 10px;
+      margin-bottom: 11px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 25px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .title {
+      margin-top: 3px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .contact {
+      margin-top: 6px;
+      font-size: 9.5px;
+    }
+
+    .contact span {
+      margin-right: 13px;
+    }
+
+    h2 {
+      margin: 10px 0 5px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #555;
+      font-size: 11.5px;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 3px 0;
+    }
+
+    .summary {
+      text-align: justify;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px 20px;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 105px 1fr;
+    }
+
+    .skill-row strong {
+      font-weight: bold;
+    }
+
+    .job {
+      margin-bottom: 8px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .company {
+      font-size: 11px;
+      font-weight: bold;
+    }
+
+    .role {
+      font-weight: bold;
+    }
+
+    .dates {
+      font-size: 9.5px;
+      white-space: nowrap;
+    }
+
+    ul {
+      margin: 3px 0 0 16px;
+      padding: 0;
+    }
+
+    li {
+      margin-bottom: 2px;
+      text-align: justify;
+    }
+
+    .education {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .certs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .print-note {
+      display: none;
+    }
+
+    @media print {
+      body {
+        background: white;
+      }
+
+      .resume {
+        width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 0.35in 0.45in;
+        box-shadow: none;
+      }
+
+      @page {
+        size: Letter;
+        margin: 0;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      .resume {
+        width: 95%;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="resume">
+
+  <header>
+    <h1>YOUR NAME</h1>
+    <div class="title">DevOps / Cloud Engineer</div>
+
+    <div class="contact">
+      <span>📍 City, State</span>
+      <span>📞 +1 (555) 555-5555</span>
+      <span>✉ your.email@email.com</span>
+      <span>LinkedIn: linkedin.com/in/yourname</span>
+      <span>GitHub: github.com/yourname</span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Professional Summary</h2>
+
+    <p class="summary">
+      DevOps and Cloud Engineer with 6 years of experience designing, automating,
+      deploying, and supporting scalable cloud infrastructure and CI/CD platforms.
+      Strong hands-on experience with AWS, Terraform, Kubernetes, Docker, Jenkins,
+      GitHub Actions, Linux, Python, and Bash. Experienced in Infrastructure as Code,
+      containerized workloads, cloud networking, monitoring, security, release
+      automation, and production troubleshooting. Proven ability to improve deployment
+      reliability, reduce manual operations, and build highly available cloud platforms.
+    </p>
+  </section>
+
+  <section>
+    <h2>Technical Skills</h2>
+
+    <div class="skills">
+
+      <div class="skill-row">
+        <strong>Cloud:</strong>
+        <span>AWS (EC2, ECS, EKS, S3, VPC, IAM, ALB, RDS, CloudWatch, Lambda, Route 53)</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>IaC:</strong>
+        <span>Terraform, CloudFormation, Terragrunt</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>Containers:</strong>
+        <span>Docker, Kubernetes, Helm, ECS/Fargate</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>CI/CD:</strong>
+        <span>Jenkins, GitHub Actions, GitLab CI/CD, AWS CodePipeline</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>Monitoring:</strong>
+        <span>CloudWatch, Prometheus, Grafana, ELK, Datadog</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>Scripting:</strong>
+        <span>Python, Bash, YAML, JSON</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>OS:</strong>
+        <span>Linux, Ubuntu, Amazon Linux, Windows Server</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>Networking:</strong>
+        <span>VPC, Subnets, Route Tables, NAT, DNS, TCP/IP, Load Balancers</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>Security:</strong>
+        <span>IAM, Security Groups, Secrets Manager, KMS, least privilege</span>
+      </div>
+
+      <div class="skill-row">
+        <strong>Version Control:</strong>
+        <span>Git, GitHub, GitLab, Bitbucket</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Professional Experience</h2>
+
+    <div class="job">
+
+      <div class="job-header">
+        <div>
+          <span class="company">ABC TECHNOLOGY</span> —
+          <span class="role">Senior DevOps / Cloud Engineer</span>
+        </div>
+
+        <span class="dates">2023 – Present</span>
+      </div>
+
+      <ul>
+        <li>
+          Designed and managed AWS infrastructure across VPC, EC2, ECS/Fargate,
+          EKS, ALB, RDS, S3, IAM, Route 53, CloudWatch, and Lambda.
+        </li>
+
+        <li>
+          Built reusable Terraform Infrastructure-as-Code for cloud networking,
+          compute, load balancing, IAM, ECS services, and supporting AWS resources.
+        </li>
+
+        <li>
+          Implemented CI/CD pipelines using Jenkins and GitHub Actions for automated
+          build, test, container image creation, security scanning, and deployment.
+        </li>
+
+        <li>
+          Containerized applications using Docker and deployed workloads using
+          Kubernetes/EKS and ECS/Fargate.
+        </li>
+
+        <li>
+          Configured Application Load Balancers, target groups, health checks,
+          service discovery, autoscaling, and blue/green deployment strategies.
+        </li>
+
+        <li>
+          Implemented CloudWatch, Prometheus, and Grafana monitoring with dashboards,
+          alerts, logs, and operational metrics for production workloads.
+        </li>
+
+        <li>
+          Automated operational tasks using Python and Bash, reducing repetitive
+          manual infrastructure and deployment activities.
+        </li>
+
+        <li>
+          Worked with development and security teams to implement IAM least privilege,
+          secrets management, encryption, and secure CI/CD practices.
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="job">
+
+      <div class="job-header">
+        <div>
+          <span class="company">XYZ SOLUTIONS</span> —
+          <span class="role">DevOps Engineer</span>
+        </div>
+
+        <span class="dates">2021 – 2023</span>
+      </div>
+
+      <ul>
+        <li>
+          Developed and maintained AWS environments supporting development,
+          staging, and production applications.
+        </li>
+
+        <li>
+          Automated infrastructure provisioning using Terraform and standardized
+          infrastructure configuration through reusable code.
+        </li>
+
+        <li>
+          Built Jenkins and GitLab CI/CD pipelines for application deployment,
+          artifact management, automated testing, and rollback workflows.
+        </li>
+
+        <li>
+          Created Docker images and managed container deployments across
+          Kubernetes and AWS ECS environments.
+        </li>
+
+        <li>
+          Configured AWS VPCs, private/public subnets, NAT gateways, route tables,
+          security groups, IAM roles, and load balancers.
+        </li>
+
+        <li>
+          Supported production incidents, performed root-cause analysis, and
+          implemented preventive automation and monitoring improvements.
+        </li>
+
+        <li>
+          Improved deployment consistency by standardizing Git workflows,
+          environment configuration, and automated release processes.
+        </li>
+      </ul>
+    </div>
+
+
+    <div class="job">
+
+      <div class="job-header">
+        <div>
+          <span class="company">TECH SERVICES INC.</span> —
+          <span class="role">Cloud / Systems Engineer</span>
+        </div>
+
+        <span class="dates">2020 – 2021</span>
+      </div>
+
+      <ul>
+        <li>
+          Managed Linux servers, AWS EC2 instances, networking components,
+          application environments, and system configurations.
+        </li>
+
+        <li>
+          Assisted with migration of application workloads to AWS and implemented
+          cloud infrastructure following high-availability and security practices.
+        </li>
+
+        <li>
+          Developed Bash and Python automation scripts for system administration,
+          deployments, health checks, and log analysis.
+        </li>
+
+        <li>
+          Supported Git-based development workflows and automated application
+          deployments through CI/CD pipelines.
+        </li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section>
+    <h2>Key Projects</h2>
+
+    <ul>
+      <li>
+        <strong>AWS ECS/Fargate Platform:</strong>
+        Built Terraform-based ECS platform with ALB, private subnets, CloudWatch
+        logging, IAM roles, health checks, and service autoscaling.
+      </li>
+
+      <li>
+        <strong>Kubernetes Platform:</strong>
+        Deployed containerized applications to EKS using Helm, ingress,
+        autoscaling, monitoring, and automated CI/CD pipelines.
+      </li>
+
+      <li>
+        <strong>Infrastructure Automation:</strong>
+        Developed reusable Terraform configurations and CI/CD workflows for
+        repeatable multi-environment AWS deployments.
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education & Certifications</h2>
+
+    <div class="education">
+      <span>
+        <strong>Bachelor's Degree</strong> — Computer Science / Information Technology
+      </span>
+      <span>2016 – 2020</span>
+    </div>
+
+    <div class="certs" style="margin-top:4px;">
+      <span>• AWS Certified Solutions Architect – Associate</span>
+      <span>• HashiCorp Certified: Terraform Associate</span>
+      <span>• Certified Kubernetes Application Developer (CKAD)</span>
+      <span>• Linux / Cloud Infrastructure Training</span>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
+```

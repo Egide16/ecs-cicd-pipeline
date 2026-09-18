@@ -1,3 +1,3 @@
-FROM nginex
+FROM nginx
 
-copy index.html /usr/share/nginx/html/index.html
+COPY index.html /usr/share/nginx/html/index.html

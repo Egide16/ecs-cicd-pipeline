@@ -34,25 +34,44 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2
-        
+
       - name: Build Docker Image
         run: |
           docker build -t ${{ vars.ECR_REPOSITORY }} .
 
       - name: Tag Docker Image
         run: |
-          docker tag ${{ vars.ECR_REPOSITORY }}:latest \
-          ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:latest
+          docker tag ${{ vars.ECR_REPOSITORY }}:latest ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:${{ github.sha }}
+          docker tag ${{ vars.ECR_REPOSITORY }}:latest ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:latest
 
       - name: Push Docker Image
         run: |
-          docker push \
-          ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:latest
+          docker push ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:${{ github.sha }}
+          docker push ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:latest
 
       - name: Deploy to ECS
         run: |
+          aws ecs describe-task-definition \
+            --task-definition nginx \
+            --region ${{ vars.AWS_REGION }} \
+            --query "taskDefinition" > task-def.json
+
+          jq 'del(.taskDefinitionArn, .revision, .status, .requiresAttributes, .compatibilities, .registeredAt, .registeredBy)' task-def.json > task-def-clean.json
+
+          jq --arg IMAGE "${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:${{ github.sha }}" \
+            '.containerDefinitions[0].image = $IMAGE' task-def-clean.json > task-def-new.json
+
+          NEW_TASK_DEF_ARN=$(aws ecs register-task-definition \
+            --cli-input-json file://task-def-new.json \
+            --region ${{ vars.AWS_REGION }} \
+            --query "taskDefinition.taskDefinitionArn" \
+            --output text)
+
+          echo "New task definition: $NEW_TASK_DEF_ARN"
+
           aws ecs update-service \
             --cluster nginx-cluster \
             --service nginx-service \
+            --task-definition "$NEW_TASK_DEF_ARN" \
             --force-new-deployment \
-            --region us-east-1
+            --region ${{ vars.AWS_REGION }}

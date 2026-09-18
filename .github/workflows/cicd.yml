@@ -49,4 +49,10 @@ jobs:
           docker push \
           ${{ steps.login-ecr.outputs.registry }}/${{ vars.ECR_REPOSITORY }}:latest
 
-      
+      - name: Deploy to ECS
+        run: |
+          aws ecs update-service \
+            --cluster nginx-cluster \
+            --service nginx-service \
+            --force-new-deployment \
+            --region us-east-1
